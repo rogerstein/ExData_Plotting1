@@ -23,10 +23,12 @@ png(file = "plot4.png",
     width = 480, height = 480,
     bg = "transparent")
 par(mfrow=c(2,2))
-hist(dataset$Global_active_power,
-     main = "Global Active Power",
-     xlab = "Global Active Power (kilowatts)",
-     col = "red")
+
+plot(dataset$datetime, 
+     dataset$Global_active_power, 
+     type = "l",
+     xlab = "",
+     ylab = "Global Active Power")
 
 with(dataset, plot(datetime, Voltage, type = "l"))
 
@@ -43,4 +45,5 @@ legend("topright",
        col = c("black", "red", "blue"))
 
 with(dataset, plot(datetime, Global_reactive_power,  type = "l"))
+
 dev.off()
